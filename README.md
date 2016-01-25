@@ -8,15 +8,14 @@ To create the schema, run the following
 To start the Main program, run the following 
 	
 	mvn clean compile exec:java -Dexec.mainClass="com.datastax.creditcard.Main"  -DcontactPoints=localhost
+	
+To start the web server run 
 
-You can use the following parameters to change the default no of transactions and credit cards 
-	
-	-DnoOfTransactions=10000000 -DnoOfCreditCards=1000000
-	
-To use the webservice, start the web server using 
-```
-mvn jetty:run
-```
+	mvn jetty:run
+
+To use the webservice, go to the folowing url
+
+	http://localhost:8080/datastax-starter/rest/get/keyspaces
 
 To remove the tables and the schema, run the following.
 
