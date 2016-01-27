@@ -15,7 +15,7 @@ To create the schema, run the following
 	
 To start the Main program, run the following 
 	
-	mvn clean compile exec:java -Dexec.mainClass="com.datastax.creditcard.Main"  -DcontactPoints=localhost
+	mvn clean compile exec:java -Dexec.mainClass="com.datastax.Main"  -DcontactPoints=localhost
 	
 To start the web server run 
 
