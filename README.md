@@ -1,7 +1,7 @@
 DataStax Java Starter
 ========================
 
-To get started download this respository. Choose a location to download the project and run the following
+To get started download this repository. Choose a location to download the project and run the following
 ```
 git clone https://github.com/DataStaxCodeSamples/datastax-java-starter
 cd datastax-java-starter
