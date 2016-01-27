@@ -1,6 +1,14 @@
 DataStax Java Starter
 ========================
 
+To get started download this respository. Choose a location to download the project and run the following
+```
+git clone https://github.com/DataStaxCodeSamples/datastax-java-starter
+cd datastax-java-starter
+rm -rf .git
+```
+Note : We run the remove so that any git files are deleted.
+
 To create the schema, run the following
 
 	mvn clean compile exec:java -Dexec.mainClass="com.datastax.demo.SchemaSetup" -DcontactPoints=localhost
