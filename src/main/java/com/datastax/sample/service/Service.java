@@ -13,8 +13,12 @@ public class Service {
 
 	private SampleDao dao;
 
-	public Service() {		
-		String contactPointsStr = PropertyHelper.getProperty("contactPoints", "localhost");
+	public Service() {	
+                String contactPointsStr = System.getProperty("contactPoints");
+                if (contactPointsStr == null) {
+                        contactPointsStr = "127.0.0.1";
+                }
+
 		this.dao = new SampleDao(contactPointsStr.split(","));
 	}	
 	
