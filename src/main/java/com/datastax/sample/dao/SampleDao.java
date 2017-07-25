@@ -11,6 +11,7 @@ import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Host;
 import com.datastax.driver.core.KeyspaceMetadata;
 import com.datastax.driver.core.Session;
+import com.datastax.driver.dse.auth.DseGSSAPIAuthProvider;
 
 public class SampleDao {
 
@@ -23,7 +24,8 @@ public class SampleDao {
 	
 	public SampleDao(String[] contactPoints) {
 
-		Cluster cluster = Cluster.builder().addContactPoints(contactPoints).build();
+		Cluster cluster = Cluster.builder().addContactPoints(contactPoints)
+			.withAuthProvider(DseGSSAPIAuthProvider.builder().build()).build();
 
 		this.session = cluster.connect();
 		this.keyspaces = cluster.getMetadata().getKeyspaces();

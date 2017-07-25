@@ -7,6 +7,7 @@ import com.datastax.demo.utils.FileUtils;
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Session;
 import com.datastax.driver.core.exceptions.InvalidQueryException;
+import com.datastax.driver.dse.auth.DseGSSAPIAuthProvider;
 
 public abstract class RunCQLFile {
 
@@ -28,7 +29,8 @@ public abstract class RunCQLFile {
 			contactPointsStr = "127.0.0.1";
 		}
 
-		cluster = Cluster.builder().addContactPoints(contactPointsStr.split(",")).build();
+		cluster = Cluster.builder().addContactPoints(contactPointsStr.split(","))
+			.withAuthProvider(DseGSSAPIAuthProvider.builder().build()).build();
 		session = cluster.connect();
 	}
 	

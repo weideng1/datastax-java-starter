@@ -11,17 +11,17 @@ Note : We run the remove so that any git files are deleted.
 
 To create the schema, run the following
 
-	mvn clean compile exec:java -Dexec.mainClass="com.datastax.demo.SchemaSetup" -DcontactPoints=<DSE node IP>
+	mvn clean compile exec:java -Dexec.mainClass="com.datastax.demo.SchemaSetup" -DcontactPoints=<DSE node IP> -Dkerberos.use.config.file=true -Djava.security.auth.login.config=jaas.config -Ddse.sasl.protocol=cassandra
 	
 To start the Main program, run the following 
 	
-	mvn clean compile exec:java -Dexec.mainClass="com.datastax.sample.Main"  -DcontactPoints=<DSE node IP>
+	mvn clean compile exec:java -Dexec.mainClass="com.datastax.sample.Main"  -DcontactPoints=<DSE node IP> -Dkerberos.use.config.file=true -Djava.security.auth.login.config=jaas.config -Ddse.sasl.protocol=cassandra
 	
 This will print out a description of all the keyspaces in the cluster using a the sample service. 
 	
 To start the web server run 
 
-	mvn jetty:run -DcontactPoints=<DSE node IP>
+	mvn jetty:run -DcontactPoints=<DSE node IP> -Dkerberos.use.config.file=true -Djava.security.auth.login.config=jaas.config -Ddse.sasl.protocol=cassandra
 
 To use the webservice, go to the folowing url
 
@@ -31,6 +31,6 @@ This will return a json representation of the keyspaces in the cluster using a t
 
 To remove the tables and the schema, run the following.
 
-    mvn clean compile exec:java -Dexec.mainClass="com.datastax.demo.SchemaTeardown"
+    mvn clean compile exec:java -Dexec.mainClass="com.datastax.demo.SchemaTeardown" -Dkerberos.use.config.file=true -Djava.security.auth.login.config=jaas.config -Ddse.sasl.protocol=cassandra
     
     
