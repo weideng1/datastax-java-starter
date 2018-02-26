@@ -31,7 +31,7 @@
     <logger name="com.datastax.driver.core.Cluster" level="DEBUG" />
     <logger name="com.datastax.driver.core.Connection" level="TRACE" />
 
-    <root level="ERROR">
+    <root level="INFO">
         <appender-ref ref="async" />
     </root>
 
